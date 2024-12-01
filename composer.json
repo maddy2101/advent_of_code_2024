@@ -1,0 +1,19 @@
+{
+    "name": "maddy2101/advent-of-code-2024",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "^11.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Maddy2101\\AdventOfCode2024\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Anja Leichsenring",
+            "email": "aleichsenring@ab-softlab.de"
+        }
+    ],
+    "require": {}
+}
