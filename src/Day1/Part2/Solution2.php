@@ -1,13 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace Maddy2101\AdventOfCode2024\Day1\Part1;
-
+namespace Maddy2101\AdventOfCode2024\Day1\Part2;
 
 /**
- * Task description: https://adventofcode.com/2024/day/1
+ * Task description: https://adventofcode.com/2024/day/1#part2
  */
-class Solution1
+class Solution2
 {
 
     public function execute(string $fileName): int
@@ -35,14 +34,10 @@ class Solution1
             }
         }
         sort($left);
-        sort($right);
-        foreach ($left as $key => $value) {
-            if ($value >= $right[$key]) {
-                $diff = $value - $right[$key];
-            } else {
-                $diff = $right[$key] - $value;
-            }
-            $result += $diff;
+        $right = array_count_values($right);
+        foreach ($left as $value) {
+            $score = $value * ($right[$value] ?? 0);
+            $result += $score;
         }
 
         return $result;
